@@ -1,34 +1,30 @@
 /*****************************************************************************
- C++ Programming - From Problem Analysis to Program Design 8th Edition
- Chapter 2 - Exercise 9
+The program then outputs the elapsed time in hours, minutes,
+ and seconds. (For example, if the elapsed time is 9630 seconds,
+ then the output is 2:40:30.)
 
+ *****************************************************************************/
 
- Write a program that prompts the user to enter five test scores and then prints
- the average test score. (Assume that the test scores are decimal numbers.)
-*****************************************************************************/
-
-///header files
 #include <iostream>
 
 using namespace std;
 
-///main function
 int main()
 {
-    ///variable declaration
-    float test1, test2, test3, test4, test5, avg;
+    int time, hour, minute, second, remainder;
 
 
+    cout << "Please enter the number of seconds elapsed: ";
+    cin >> time;
+    cout<<endl;
 
-    ///prompt and read 5 test scores
-    cout<<"Enter 5 test < "<<flush;
-    cin >> test1 >> test2 >> test3 >> test4 >> test5;
+    ///calculation
+    hour = time/3600;
+    remainder = time % 3600;
+    minute = remainder / 60;
+    second = remainder % 60;
 
-
-     avg = (test1 + test2 + test3 + test4 + test5) / 5;
-
-     cout<<"Average of the test score: "<<avg;
-
-
+    ///output
+    cout << hour << ":" << minute << ":" << second << endl;
     return 0;
 }
